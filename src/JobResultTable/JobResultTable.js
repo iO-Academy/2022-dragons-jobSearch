@@ -1,28 +1,27 @@
 import SkillTag from "../SkillTag/SkillTag";
-import {useState} from "react";
-import Title from "../Title/Title";
 import ContractTypeTag from "../ContractType/contractType";
 
 const JobResultTable = ({jobData}) => {
 
-
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
-
+        let contractType = result.type
 
             return (
                 <>
 
                     <div className="jobResultTable jobRow">
                         <div className="col1">
-                            <img src={result.logo} className="companyLogo"/>
+                            <img alt="companyLogo" src={result.logo} className="companyLogo"/>
                             <div className="col1Text">
                                 <h2>{result.job_title}</h2>
                                 <h3>{result.company}</h3>
                             </div>
                         </div>
                         <div className="col2">
-                            <ContractTypeTag contractType={result.type}/>
+                            {contractType !== null &&
+                                <ContractTypeTag contractType={contractType}/>
+                            }
                         </div>
                         <div className="col3">
                             {result.salary !== null &&
@@ -46,7 +45,7 @@ const JobResultTable = ({jobData}) => {
 
     return (
         <>
-            <div>
+            <section>
                 <div className="title">
                     <h2>Most Recent Jobs</h2>
                 </div>
@@ -67,7 +66,7 @@ const JobResultTable = ({jobData}) => {
 
                     {jobArray(jobData)}
 
-            </div>
+            </section>
         </>
     )
 }

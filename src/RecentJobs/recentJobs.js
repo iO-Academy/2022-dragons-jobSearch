@@ -1,10 +1,10 @@
 import {useState, useEffect} from "react"
 import JobResultTable from "../JobResultTable/JobResultTable";
-import Title from "../Title/Title";
+
 
 function RecentJobs() {
 
-const [RecentJobData, setRecentJobData] = useState([])
+const [recentJobData, setRecentJobData] = useState([])
 
     const getRecentJobs = async () => {
         let response = await fetch('http://localhost:8080/jobs/recent')
@@ -21,7 +21,7 @@ const [RecentJobData, setRecentJobData] = useState([])
     return (
         <>
 
-            <JobResultTable jobData={RecentJobData} recentJobs='recentJobs'/>
+            <JobResultTable jobData={recentJobData} recentJobs='recentJobs'/>
         </>
     )
 
