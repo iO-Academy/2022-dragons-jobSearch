@@ -4,7 +4,7 @@ const ContractTypeTag = ({ contractType }) => {
     return (
         <>
             {contractType !== null &&
-                <h6 className="typeTag">{contractType}</h6>
+                <div><h6 className="typeTag">{contractType}</h6></div>
             }
         </>
     )
