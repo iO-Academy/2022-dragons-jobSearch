@@ -182,10 +182,10 @@ const testTable = [
         ]
     }
 ]
-import SkillTag from "./SkillTag/SkillTag";
-import RecentJobs from "./RecentJobs/recentJobs";
-import Title from "./Title/Title";
-import ContractTypeTag from "./ContractType/contractType";
+// import SkillTag from "./SkillTag/SkillTag";
+// import RecentJobs from "./RecentJobs/recentJobs";
+// import Title from "./Title/Title";
+// import ContractTypeTag from "./ContractType/contractType";
 
 function App() {
     const recentJobs = "Most recent jobs"
@@ -193,10 +193,10 @@ function App() {
     return (
         <>
             <JobResultTable testTable={testTable}/>
-            <Title recentJobs={recentJobs}/>
-            <RecentJobs/>
-            <SkillTag skillTag={skillTag} />
-            <ContractTypeTag contractType={'Full Time'}/>
+            {/*<Title recentJobs={recentJobs}/>*/}
+            {/*<RecentJobs/>*/}
+            {/*<SkillTag skillTag={skillTag} />*/}
+            {/*<ContractTypeTag contractType={'Full Time'}/>*/}
         </>
     )
 }
