@@ -1,3 +1,5 @@
+$skill-tag-bg-color: #2cbcc9;
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +11,22 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+.skillTag {
+  background-color: $skill-tag-bg-color;
+  height: fit-content;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
 }
 
 .title {
