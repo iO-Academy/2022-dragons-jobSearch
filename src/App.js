@@ -10,7 +10,7 @@ function App() {
         <>
         <Title recentJobs={recentJobs}/>
         <RecentJobs/>
-        <ContractTypeTag contractType={"full time"}/>
+        <ContractTypeTag contractType={null}/>
         </>
     )
 }
