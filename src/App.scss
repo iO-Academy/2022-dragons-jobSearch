@@ -1,3 +1,6 @@
+$darkGrey: #343A3F;
+$lightGrey: #3E4449;
+
 * {
   box-sizing: border-box;
 }
@@ -9,4 +12,42 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+.jobResultTable {
+  margin: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 2fr;
+  color: white;
+  background-color: $darkGrey;
+
+
+
+  .companyLogo {
+    height: 75px;
+    width: auto;
+    margin: 10px 10px;
+  }
+
+  .col1Text {
+    display: block;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+
+}
+
+.jobRow:nth-child(2n) {
+  background-color: $lightGrey;
+}
+
+.titleRow {
+  height: 40px;
+  font-size: 2rem;
+  padding: 10px 10px;
 }
