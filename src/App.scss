@@ -1,5 +1,7 @@
 $darkGrey: #343A3F;
 $lightGrey: #3E4449;
+$skill-tag-bg-color: #2cbcc9;
+$type-tag-bg-color: #007BFF;
 
 * {
   box-sizing: border-box;
@@ -22,8 +24,6 @@ body {
   grid-template-columns: 3fr 1fr 1fr 2fr;
   color: white;
   background-color: $darkGrey;
-
-
 
   .companyLogo {
     height: 75px;
@@ -72,10 +72,39 @@ body {
   .col1, .col2, .col3 {
     padding-right: 10px;
   }
-
-
 }
 
 .jobRow:nth-child(2n) {
   background-color: $lightGrey;
+}
+
+.skillTag {
+  background-color: $skill-tag-bg-color;
+  height: fit-content;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+}
+
+.typeTag {
+  background-color: $type-tag-bg-color;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  height: fit-content;
+  width: fit-content;
+}
+
+.title {
+  font-size: 4rem;
 }
