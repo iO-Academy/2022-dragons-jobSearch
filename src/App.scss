@@ -1,5 +1,9 @@
+
 $darkGrey: #343A3F;
 $lightGrey: #3E4449;
+
+$skill-tag-bg-color: #2cbcc9;
+
 
 * {
   box-sizing: border-box;
@@ -13,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 
 .jobResultTable {
   margin: auto;
@@ -51,3 +56,23 @@ body {
   font-size: 2rem;
   padding: 10px 10px;
 }
+
+.skillTag {
+  background-color: $skill-tag-bg-color;
+  height: fit-content;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+}
+
+.title {
+  font-size: 4rem;
+
