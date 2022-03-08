@@ -14,7 +14,7 @@ function App() {
             <Title recentJobs={recentJobs}/>
             <RecentJobs/>
             <SkillTag skillTag={skillTag} />
-            <ContractTypeTag contractType={null}/>
+            <ContractTypeTag contractType={'Full Time'}/>
         </>
     )
 }
