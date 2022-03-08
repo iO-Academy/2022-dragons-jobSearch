@@ -13,7 +13,6 @@ body {
   padding: 0;
 }
 
-
 .skillTag {
   background-color: $skill-tag-bg-color;
   height: fit-content;
@@ -28,4 +27,8 @@ body {
     font-weight: bolder;
     font-size: 1.3rem;
   }
+}
+
+.title {
+  font-size: 4rem;
 }
