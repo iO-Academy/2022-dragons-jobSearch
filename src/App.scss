@@ -1,4 +1,5 @@
 $skill-tag-bg-color: #2cbcc9;
+$type-tag-bg-color: #007BFF;
 
 * {
   box-sizing: border-box;
@@ -29,6 +30,18 @@ body {
   }
 }
 
+.typeTag {
+  background-color: $type-tag-bg-color;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  height: fit-content;
+  width: fit-content;
+}
+
 .title {
   font-size: 4rem;
 }
+
