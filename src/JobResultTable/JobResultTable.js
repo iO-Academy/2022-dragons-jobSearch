@@ -1,9 +1,18 @@
-const JobResultTable = ({testTable}) => {
+import SkillTag from "../SkillTag/SkillTag";
+import {useState} from "react";
+import Title from "../Title/Title";
+import ContractTypeTag from "../ContractType/contractType";
 
-    const testArray = (testTable) => {
-        let tableResults = testTable.map((result) => {
+const JobResultTable = ({jobData}) => {
+
+
+    const jobArray = (jobData) => {
+        let tableResults = jobData.map((result) => {
+
+
             return (
                 <>
+
                     <div className="jobResultTable jobRow">
                         <div className="col1">
                             <img src={result.logo} className="companyLogo"/>
@@ -13,13 +22,20 @@ const JobResultTable = ({testTable}) => {
                             </div>
                         </div>
                         <div className="col2">
-                            <h4>{result.type}</h4>
+                            <ContractTypeTag contractType={result.type}/>
                         </div>
                         <div className="col3">
-                            {result.salary !== null ? <h4>£{parseInt(result.salary).toLocaleString("en-US")}</h4> : <h4></h4>}
+                            {result.salary !== null &&
+                                <h4>£{parseInt(result.salary).toLocaleString("en-US")}</h4>
+                            }
                         </div>
                         <div className="col4">
-                            <h4>Skills</h4>
+
+                            {result.skills.map((skill) => {
+                                return <SkillTag skillTag={skill.skill} />
+                            })}
+
+
                         </div>
                     </div>
                 </>
@@ -28,10 +44,12 @@ const JobResultTable = ({testTable}) => {
         return tableResults
     }
 
-
     return (
         <>
             <div>
+                <div className="title">
+                    <h2>Most Recent Jobs</h2>
+                </div>
                 <div className="jobResultTable titleRow">
                     <div>
                         Job Title/Company
@@ -47,8 +65,7 @@ const JobResultTable = ({testTable}) => {
                     </div>
                 </div>
 
-                    {testArray(testTable)}
-
+                    {jobArray(jobData)}
 
             </div>
         </>
