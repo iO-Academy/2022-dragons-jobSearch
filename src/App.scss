@@ -2,6 +2,7 @@ $darkGrey: #343A3F;
 $lightGrey: #3E4449;
 $skill-tag-bg-color: #2cbcc9;
 $type-tag-bg-color: #007BFF;
+$skill-tag-bg-color: #2cbcc9;
 
 * {
   box-sizing: border-box;
@@ -76,6 +77,12 @@ body {
 
 .jobRow:nth-child(2n) {
   background-color: $lightGrey;
+}
+
+.titleRow {
+  height: 40px;
+  font-size: 2rem;
+  padding: 10px 10px;
 }
 
 .skillTag {
