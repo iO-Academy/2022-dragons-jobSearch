@@ -20,7 +20,7 @@ useEffect(async () => {
 
     return (
         <>
-            Hello
+
         </>
     )
 

@@ -8,9 +8,11 @@ function App() {
     const recentJobs = "Most recent jobs"
     const skillTag = 'MySql'
     return (
-        <Title recentJobs={recentJobs}/>
-        <RecentJobs/>
-        <SkillTag skillTag={skillTag} />
+        <>
+            <Title recentJobs={recentJobs}/>
+            <RecentJobs/>
+            <SkillTag skillTag={skillTag} />
+        </>
     )
 }
 
