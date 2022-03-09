@@ -98,6 +98,19 @@ h4 {
   min-width: 385px;
 }
 
+.overlay {
+  visibility: hidden;
+  background-color: green;
+
+  .overlayOpen {
+    visibility: visible;
+  }
+
+  .modalOpen {
+    visibility: visible;
+  }
+}
+
 @media only screen and (max-width: 900px){
   .jobResultTable {
     grid-template-columns: 2fr repeat(3, 1fr);
