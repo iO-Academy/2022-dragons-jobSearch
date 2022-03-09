@@ -3,17 +3,20 @@ import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
 import JobModal from "../JobModal/JobModal";
 
-const JobResultTable = ({jobData}) => {
-
+const JobResultTable = ({jobData, setModalShow, setJobId}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
+        const openModal = () => {
+            setModalShow(true)
+            setJobId(result.id)
+        }
             return (
                     <div className="jobResultTable jobRow" key={uniqid()}>
                         <div className="col1">
                             <img alt="companyLogo" src={result.logo} className="companyLogo"/>
                             <div className="col1Text">
-                                <h2>{result.job_title}</h2>
+                                <a href="#" onClick={openModal}><h2>{result.job_title}</h2></a>
                                 <h3>{result.company}</h3>
                             </div>
                         </div>

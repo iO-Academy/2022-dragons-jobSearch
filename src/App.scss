@@ -39,6 +39,15 @@ h4 {
 
   .col1Text {
     display: block;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   div {
@@ -97,6 +106,26 @@ h4 {
   margin: auto;
   width: 50%;
   min-width: 385px;
+}
+
+.overlay {
+  visibility: hidden;
+  background-color: blue;
+  position: fixed;
+  height: 500px;
+  width: 500px;
+
+  .overlayOpen {
+    visibility: visible;
+  }
+}
+
+.modalClosed {
+  visibility: hidden;
+}
+
+.modalOpen {
+  visibility: visible;
 }
 
 @media only screen and (max-width: 900px){
