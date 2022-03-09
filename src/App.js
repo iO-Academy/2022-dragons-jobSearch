@@ -1,15 +1,16 @@
 import './normalize.css'
 import './App.scss';
 import RecentJobs from "./RecentJobs/recentJobs";
-import {useState} from "react"
+import Modal from "./ModalShow/ModalShow";
+import {useState} from 'react'
 
 function App() {
-
-    const [showModal, setShowModal] = useState(false)
-
+    const [modalShow, setModalShow] = useState(false)
+    const [jobId, setJobId] = useState('')
     return (
         <>
-            <RecentJobs />
+            <Modal modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} setJobId={setJobId} />
+            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} />
         </>
     )
 }
