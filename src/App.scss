@@ -3,6 +3,7 @@ $lightGrey: #3E4449;
 $skill-tag-bg-color: #2cbcc9;
 $type-tag-bg-color: #007BFF;
 $skill-tag-bg-color: #2cbcc9;
+$activeGreen: #27A744;
 
 * {
   box-sizing: border-box;
@@ -128,5 +129,123 @@ h4 {
 
   .col1, .col2, .col3 {
     padding-right: 10px;
+  }
+}
+
+.modalScreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#0c546070;
+}
+
+.JobModal {
+  height: 95vh;
+  width: 65vw;
+  margin: auto;
+  background-color: white;
+
+  .modalTitle {
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    border-bottom: 1px #dedede solid;
+    margin-bottom: 10px;
+    icon {
+      font-size: 1.2rem;
+      font-weight: 900;
+      padding: 10px 0 0 0;
+      color: $type-tag-bg-color;
+    }
+  }
+
+  .modalBanner {
+    background-color: $type-tag-bg-color;
+    height: 15%;
+    margin: 0 10px 10px 10px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h3 {
+      color: #FFFFFF;
+      font-size: 2rem;
+      padding-right: 10px;
+
+    }
+  }
+
+  .modalJob {
+    background-color: #FFFFFF;
+    margin: 0 10px 10px 10px;
+    padding: 10px;
+    h1 {
+      margin: 0;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+    img {
+      height: 70px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .company {
+      display: flex;
+      justify-content: flex-start;
+
+      h4 {
+        margin: auto 0;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+
+    .applyButton {
+      background-color: $activeGreen;
+      color: #ffffff;
+      border-radius: 3px;
+      padding: 5px 10px;
+      border-style: none;
+    }
+
+    .saveForLaterButton {
+      background-color: transparent;
+      color: grey;
+      border-radius: 3px;
+      padding: 5px 10px;
+      border: solid grey;
+    }
+  }
+
+  .keyFacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 3fr;
+
+    h5 {
+      margin: 3px 0;
+      padding: 0;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
