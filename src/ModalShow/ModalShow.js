@@ -1,15 +1,15 @@
-const Modal = ({modalShow, setModalDisplay}) => {
+const Modal = ({modalShow, setModalShow, jobId, setJobId}) => {
 
     const openModal = () => {
-        setModalDisplay(true)
+        setModalShow(true)
     }
 
     const closeModal = () => {
-        setModalDisplay(false)
+        setModalShow(false)
     }
 
     const overlay = () => {
-        setModalDisplay(false)
+        setModalShow(false)
     }
 
     const modalClick = (e) => {
@@ -18,7 +18,6 @@ const Modal = ({modalShow, setModalDisplay}) => {
 
     return (
         <>
-
             <div onClick={openModal} >open modal button</div>
             <div onClick={overlay} className={modalShow === false ? 'overlay' : 'overlay overlayOpen'}>
                 <div onClick={modalClick} className={modalShow === true ? 'modalOpen' : 'modalClosed'}>
