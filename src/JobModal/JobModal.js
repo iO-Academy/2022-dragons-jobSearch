@@ -16,7 +16,6 @@ const JobModal = ({jobId}) => {
     }, [jobId])
     return (
         <>
-            <button onClick={()=> console.log(jobData)}>Button</button>
             <div className="modalScreen">
                 <section className="JobModal">
                     <div className="modalTitle">
