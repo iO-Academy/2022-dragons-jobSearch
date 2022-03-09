@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import JobResultTable from "../JobResultTable/JobResultTable";
 
 
-function RecentJobs({setModalShow, setJobId}) {
+function RecentJobs({setModalShow, setJobId, modalShow, jobId}) {
 
 const [recentJobData, setRecentJobData] = useState([])
 
@@ -20,7 +20,7 @@ const [recentJobData, setRecentJobData] = useState([])
 
     return (
         <>
-            <JobResultTable jobData={recentJobData} recentJobs='recentJobs' setModalShow={setModalShow} setJobId={setJobId}/>
+            <JobResultTable jobData={recentJobData} recentJobs='recentJobs' setModalShow={setModalShow} setJobId={setJobId} modalShow={modalShow} jobId={jobId} />
         </>
     )
 

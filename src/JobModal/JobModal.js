@@ -1,7 +1,18 @@
 import {useEffect, useState} from "react";
+import ContractTypeTag from "../ContractType/contractType";
+import SkillTag from "../SkillTag/SkillTag";
+import uniqid from "uniqid";
 
-const JobModal = ({jobId}) => {
+const JobModal = ({jobId, modalShow, setModalShow}) => {
     const [jobData, setJobData] = useState(null)
+
+    const closeModal = () => {
+        setModalShow(false)
+    }
+
+    const modalClick = (e) => {
+        e.stopPropagation()
+    }
 
     useEffect(() => {
         const getSingleJob = async () => {
@@ -18,15 +29,15 @@ const JobModal = ({jobId}) => {
     return (
         <>
             {jobData &&
-                <div className="modalScreen">
-                    <section className="JobModal">
+                <div onClick={closeModal} className={modalShow === true ? 'modalScreen modalOpen' : 'modalScreen modalClosed'}>
+                    <section onClick={modalClick} className="JobModal">
                         <div className="modalTitle">
                             <h3>{jobData.job_title} - {jobData.company}</h3>
-                            <a href="#"><p>{"\u2715"}</p></a>
+                            <a href="#"><p onClick={closeModal}>{"\u2715"}</p></a>
                         </div>
                         <div className="modalBanner">
                             <h3>{jobData.job_title}</h3>
-                            <i>COMPONENT</i>
+                            <ContractTypeTag contractType={jobData.type} />
                         </div>
                         <div className="modalJob">
                             <div className="company">
@@ -40,10 +51,12 @@ const JobModal = ({jobId}) => {
                                 <h5>Date posted:</h5>
                                 <h5>Skills:</h5>
                                 <h5>£{parseInt(jobData.salary).toLocaleString("en-US")}</h5>
-                                <h5>COMPONENT</h5>
+                                <h5>{jobData.type}</h5>
                                 <h5>{(jobData.posted).replaceAll("-", "/")}</h5>
                                 <div className="skills">
-                                    COMPONENT
+                                    {jobData.skills.map((skill) => {
+                                        return <SkillTag key={uniqid()} skillTag={skill.skill} />
+                                    })}
                                 </div>
                             </div>
                             <main>

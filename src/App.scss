@@ -52,6 +52,7 @@ h4 {
 
   div {
     display: flex;
+    align-items: center;
   }
 
   .col4 {
@@ -108,57 +109,12 @@ h4 {
   min-width: 385px;
 }
 
-.overlay {
-  visibility: hidden;
-  background-color: blue;
-  position: fixed;
-  height: 500px;
-  width: 500px;
-
-  .overlayOpen {
-    visibility: visible;
-  }
-}
-
 .modalClosed {
   visibility: hidden;
 }
 
 .modalOpen {
   visibility: visible;
-}
-
-@media only screen and (max-width: 900px){
-  .jobResultTable {
-    grid-template-columns: 2fr repeat(3, 1fr);
-    min-width: 95vw;
-  }
-
-  .title {
-    width: 95%;
-  }
-
-  img {
-    display: none;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .titleRow {
-    font-size: 1.3rem;
-    padding: 5px 5px;
-    height: 30px;
-  }
-
-  .col1Text {
-    padding-left: 10px;
-  }
-
-  .col1, .col2, .col3 {
-    padding-right: 10px;
-  }
 }
 
 .modalScreen {
@@ -214,6 +170,10 @@ h4 {
       padding-right: 10px;
 
     }
+
+    .typeTag {
+      background-color: $activeGreen;
+    }
   }
 
   .modalJob {
@@ -225,8 +185,12 @@ h4 {
       margin: 0;
     }
 
+    h3 {
+      font-size: 1.6rem;
+    }
+
     p {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
     }
 
     img {
@@ -278,11 +242,43 @@ h4 {
     h5 {
       margin: 3px 0;
       padding: 0;
+      font-size: 1.4rem;
     }
 
     .skills {
       display: flex;
-      justify-content: space-around;
     }
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .jobResultTable {
+    min-width: 95vw;
+  }
+
+  .title {
+    width: 95%;
+  }
+
+  img {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .titleRow {
+    font-size: 1.3rem;
+    padding: 5px 5px;
+    height: 30px;
+  }
+
+  .col1Text {
+    padding-left: 10px;
+  }
+
+  .col1, .col2, .col3 {
+    padding-right: 10px;
   }
 }
