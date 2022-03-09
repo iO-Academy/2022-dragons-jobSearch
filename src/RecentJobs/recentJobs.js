@@ -6,16 +6,16 @@ function RecentJobs() {
 
 const [recentJobData, setRecentJobData] = useState([])
 
-    const getRecentJobs = async () => {
-        let response = await fetch('http://localhost:8080/jobs/recent')
-        return await response.json()
-    }
 
-    useEffect(async () => {
 
-        let jobData = await getRecentJobs()
-        setRecentJobData(jobData)
+    useEffect(() => {
+        const getRecentJobs = async () => {
+            let response = await fetch('http://localhost:8080/jobs/recent')
+            const jobData = await response.json()
+            setRecentJobData(jobData)
+        }
 
+        getRecentJobs()
     }, [])
 
     return (
@@ -28,7 +28,5 @@ const [recentJobData, setRecentJobData] = useState([])
 }
 
 export default RecentJobs
-
-
 
 

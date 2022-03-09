@@ -1,16 +1,15 @@
 import SkillTag from "../SkillTag/SkillTag";
 import ContractTypeTag from "../ContractType/contractType";
+import uniqid from 'uniqid';
 
 const JobResultTable = ({jobData}) => {
 
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
-
             return (
-                <>
 
-                    <div className="jobResultTable jobRow">
+                    <div className="jobResultTable jobRow" key={uniqid()}>
                         <div className="col1">
                             <img alt="companyLogo" src={result.logo} className="companyLogo"/>
                             <div className="col1Text">
@@ -31,13 +30,13 @@ const JobResultTable = ({jobData}) => {
                         <div className="col4">
 
                             {result.skills.map((skill) => {
-                                return <SkillTag skillTag={skill.skill} />
+                                return <SkillTag key={uniqid()} skillTag={skill.skill} />
                             })}
 
 
                         </div>
                     </div>
-                </>
+
             )
         })
         return tableResults
