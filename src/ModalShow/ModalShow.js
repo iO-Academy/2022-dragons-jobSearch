@@ -1,4 +1,4 @@
-const Modal = ({modalShow, setModalShow, jobId, setJobId}) => {
+const Modal = ({modalShow, setModalShow}) => {
 
     const openModal = () => {
         setModalShow(true)
