@@ -149,20 +149,24 @@ h4 {
   height: 95vh;
   width: 65vw;
   margin: auto;
-  background-color: white;
+  background-color: #FFFFFF;
 
   .modalTitle {
-    background-color:white;
+    background-color:#FFFFFF;
     display: flex;
     justify-content: space-between;
     padding: 5px 10px 5px 10px;
     border-bottom: 1px #dedede solid;
     margin-bottom: 10px;
+
     p {
       font-size: 1.2rem;
       font-weight: 900;
-      padding: 10px 0 0 0;
       color: $type-tag-bg-color;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 
@@ -174,6 +178,7 @@ h4 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
     h3 {
       color: #FFFFFF;
       font-size: 2rem;
@@ -186,12 +191,15 @@ h4 {
     background-color: #FFFFFF;
     margin: 0 10px 10px 10px;
     padding: 10px;
+
     h1 {
       margin: 0;
     }
+
     p {
       font-size: 1.1rem;
     }
+
     img {
       height: 70px;
       width: auto;

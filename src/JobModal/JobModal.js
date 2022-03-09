@@ -22,7 +22,7 @@ const JobModal = ({jobId}) => {
                     <section className="JobModal">
                         <div className="modalTitle">
                             <h3>{jobData.job_title} - {jobData.company}</h3>
-                            <a><p>{"\u2715"}</p></a>
+                            <a href="#"><p>{"\u2715"}</p></a>
                         </div>
                         <div className="modalBanner">
                             <h3>{jobData.job_title}</h3>
