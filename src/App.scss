@@ -1,0 +1,132 @@
+$darkGrey: #343A3F;
+$lightGrey: #3E4449;
+$skill-tag-bg-color: #2cbcc9;
+$type-tag-bg-color: #007BFF;
+$skill-tag-bg-color: #2cbcc9;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.jobResultTable {
+  margin: auto;
+  width: 50%;
+  min-width: 385px;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 2fr;
+  color: white;
+  background-color: $darkGrey;
+
+  .companyLogo {
+    height: 75px;
+    width: auto;
+    margin: 10px 10px;
+  }
+
+  .col1Text {
+    display: block;
+  }
+
+  div {
+    display: flex;
+  }
+
+  .col4 {
+    flex-wrap: wrap;
+  }
+}
+
+.titleRow {
+  height: 40px;
+  font-size: 2rem;
+  margin: auto;
+  width: 50%;
+  min-width: 385px;
+}
+
+
+.jobRow:nth-child(2n) {
+  background-color: $lightGrey;
+}
+
+.skillTag {
+  background-color: $skill-tag-bg-color;
+  height: fit-content;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 4px 4px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+}
+
+.typeTag {
+  background-color: $type-tag-bg-color;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  height: fit-content;
+  width: fit-content;
+
+}
+
+.title {
+  font-size: 2rem;
+  margin: auto;
+  width: 50%;
+  min-width: 385px;
+}
+
+@media only screen and (max-width: 900px){
+  .jobResultTable {
+    grid-template-columns: 2fr repeat(3, 1fr);
+    min-width: 95vw;
+  }
+
+  .title {
+    width: 95%;
+  }
+
+  img {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .titleRow {
+    font-size: 1.3rem;
+    padding: 5px 5px;
+    height: 30px;
+  }
+
+  .col1Text {
+    padding-left: 10px;
+  }
+
+  .col1, .col2, .col3 {
+    padding-right: 10px;
+  }
+}
