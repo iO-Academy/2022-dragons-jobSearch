@@ -20,8 +20,7 @@ const [recentJobData, setRecentJobData] = useState([])
 
     return (
         <>
-
-            <JobResultTable jobData={recentJobData} recentJobs='recentJobs'/>
+            <JobResultTable jobData={recentJobData} />
         </>
     )
 
