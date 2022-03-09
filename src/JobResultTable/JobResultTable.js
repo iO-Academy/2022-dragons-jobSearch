@@ -2,7 +2,7 @@ import SkillTag from "../SkillTag/SkillTag";
 import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
 
-const JobResultTable = ({jobData, modalShow, setModalShow, jobId, setJobId}) => {
+const JobResultTable = ({jobData, setModalShow, setJobId}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type

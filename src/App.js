@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <Modal modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} setJobId={setJobId} />
-            <RecentJobs modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} setJobId={setJobId} />
+            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} />
         </>
     )
 }
