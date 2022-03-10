@@ -58,10 +58,7 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                                 <h5>Type:</h5>
                                 <h5>Date posted:</h5>
                                 <h5>Skills:</h5>
-                                {jobData.salary !== null ?
-                                    <h5>£{parseInt(jobData.salary).toLocaleString("en-US")}</h5>
-                                    : <h5> </h5>
-                                }
+                                <h5>{jobData.salary !== null ? '£' + parseInt(jobData.salary).toLocaleString("en-US") : jobData.salary}</h5>
                                 <h5>{jobData.type}</h5>
                                 <h5>{(formatDate(jobData.posted))}</h5>
                                 <div className="skills">
