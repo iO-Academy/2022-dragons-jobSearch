@@ -12,3 +12,4 @@ const SearchJobs = () => {
 }
 
 export default SearchJobs
+
