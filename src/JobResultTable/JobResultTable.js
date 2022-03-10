@@ -4,6 +4,7 @@ import uniqid from 'uniqid';
 import JobModal from "../JobModal/JobModal";
 import Title from "../Title/Title"
 import ToggleJobsView from "../ToggleJobsView/ToggleJobsView";
+import NoResults from "../NoResults/NoResults"
 
 const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, title, setTitle, setJobData, getRecentJobs}) => {
     const jobArray = (jobData) => {
@@ -42,7 +43,12 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, titl
 
             )
         })
-        return tableResults
+
+        if (jobData.length === 0) {
+            return (<NoResults/>)
+        } else {
+            return tableResults
+        }
     }
 
     return (

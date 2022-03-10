@@ -18,6 +18,7 @@ function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobDa
 
     return (
         <>
+
             <JobResultTable
                 jobData={jobData}
                 recentJobs='recentJobs'
