@@ -66,6 +66,7 @@ h4 {
   margin: auto;
   width: 50%;
   min-width: 385px;
+  padding: 0 10px;
 }
 
 
@@ -106,7 +107,6 @@ h4 {
   font-size: 2rem;
   margin: auto;
   width: 50%;
-  min-width: 385px;
 }
 
 .modalClosed {
@@ -122,16 +122,17 @@ h4 {
   left: 0;
   top: 0;
   z-index: 10;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color:#0c546070;
+  overflow: scroll;
 }
 
 .JobModal {
-  height: 95vh;
+  min-height: 90vh;
   width: 65vw;
   margin: auto;
   background-color: #FFFFFF;
@@ -237,7 +238,8 @@ h4 {
 
   .keyFacts {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 3fr;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
 
     h5 {
       margin: 3px 0;
@@ -247,6 +249,7 @@ h4 {
 
     .skills {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 }
@@ -280,5 +283,9 @@ h4 {
 
   .col1, .col2, .col3 {
     padding-right: 10px;
+  }
+
+  .JobModal {
+    width: 90%;
   }
 }

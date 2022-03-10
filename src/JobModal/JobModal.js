@@ -26,6 +26,12 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
 
     }, [jobId])
 
+    function formatDate(dateStr) {
+        let dateArray = dateStr.split("-")
+        let newDate = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0]
+        return newDate
+    }
+
     return (
         <>
             {jobData &&
@@ -50,9 +56,12 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                                 <h5>Type:</h5>
                                 <h5>Date posted:</h5>
                                 <h5>Skills:</h5>
-                                <h5>£{parseInt(jobData.salary).toLocaleString("en-US")}</h5>
+                                {jobData.salary !== null ?
+                                    <h5>£{parseInt(jobData.salary).toLocaleString("en-US")}</h5>
+                                    : <h5></h5>
+                                }
                                 <h5>{jobData.type}</h5>
-                                <h5>{(jobData.posted).replaceAll("-", "/")}</h5>
+                                <h5>{(formatDate(jobData.posted))}</h5>
                                 <div className="skills">
                                     {jobData.skills.map((skill) => {
                                         return <SkillTag key={uniqid()} skillTag={skill.skill} />
