@@ -39,10 +39,11 @@ const SearchJobs = () => {
 
     const searchJobs = (e) => {
         e.preventDefault()
-        setTitle('Search Results')
         let cleaned = sanitiseInput(searchQuery)
-        searchQuery !== '' &&
+        if (searchQuery !== '') {
             getSearchResults(cleaned)
+            setTitle('Search Results')
+        }
     }
 
 

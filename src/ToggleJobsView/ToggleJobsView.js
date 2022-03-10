@@ -1,12 +1,26 @@
 import {useState} from 'react'
 
-const ToggleJobsView = ({title, setTitle}) => {
+const ToggleJobsView = ({title, setTitle, setJobData, getRecentJobs}) => {
 
     const [jobsView, setJobsView] = useState(true)
 
+    async function getAllJobs() {
+        let response = await fetch('http://localhost:8080/jobs')
+        const jobData = await response.json()
+        setJobData(jobData)
+    }
+
     const handleClick = () => {
         setJobsView(!jobsView)
-        setTitle('All Jobs')
+        if (jobsView){
+            setTitle('All Jobs')
+            getAllJobs()
+        }  else {
+            setTitle('Most Recent Jobs')
+            getRecentJobs()
+
+        }
+
     }
 
     return (
