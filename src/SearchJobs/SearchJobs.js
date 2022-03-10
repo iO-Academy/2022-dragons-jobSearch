@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import RecentJobs from "../RecentJobs/recentJobs";
 
 const SearchJobs = () => {
@@ -12,28 +12,35 @@ const SearchJobs = () => {
         return noSpecialCharacters
     }
 
+    useEffect(() => {
+        console.log(searchResults)
+    }, [searchResults])
+
     async function getSearchResults(searchQ) {
-        let response = await fetch(`http://localhost:8080/jobs?search=${searchQ}`)
+        let response = await fetch('http://localhost:8080/jobs?search=' + searchQ)
         const jobData = await response.json()
         setSearchResults(jobData)
     }
 
+    const handleChange = (e) => {
+        setSearchQuery(e.target.value)
+    }
 
-    // function searchJobs() {
-    //     setSearchQuery()
-    //     let cleaned = sanitiseInput(searchQuery)
-    //     searchQuery !== '' &&
-    //         getSearchResults(cleaned) &&
-    //     console.log(searchResults)
-    // }
+
+    const searchJobs = (e) => {
+        e.preventDefault()
+        let cleaned = sanitiseInput(searchQuery)
+        searchQuery !== '' &&
+            getSearchResults(cleaned)
+    }
 
     return (
         <>
             <div className="searchBanner">
                 <form>
                     <h1>Find your perfect job</h1>
-                    <input type="text" />
-                    <button>Search</button>
+                    <input type="text" onChange={handleChange}/>
+                    <button onClick={searchJobs}>Search</button>
                 </form>
             </div>
 
