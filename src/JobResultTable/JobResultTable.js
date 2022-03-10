@@ -3,7 +3,7 @@ import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
 import JobModal from "../JobModal/JobModal";
 
-const JobResultTable = ({jobData, setModalShow, setJobId}) => {
+const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
@@ -65,7 +65,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId}) => {
                 </div>
 
                     {jobArray(jobData)}
-                <JobModal jobId='768'/>
+                <JobModal modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} />
             </section>
         </>
     )

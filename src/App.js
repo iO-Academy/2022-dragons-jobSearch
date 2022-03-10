@@ -1,7 +1,6 @@
 import './normalize.css'
 import './App.scss';
 import RecentJobs from "./RecentJobs/recentJobs";
-import Modal from "./ModalShow/ModalShow";
 import {useState} from 'react'
 
 
@@ -10,8 +9,7 @@ function App() {
     const [jobId, setJobId] = useState('')
     return (
         <>
-            <Modal modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} setJobId={setJobId} />
-            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} />
+            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} modalShow={modalShow} jobId={jobId} />
         </>
     )
 }
