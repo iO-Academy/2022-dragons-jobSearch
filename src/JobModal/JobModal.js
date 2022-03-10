@@ -43,7 +43,9 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                         </div>
                         <div className="modalBanner">
                             <h3>{jobData.job_title}</h3>
-                            <ContractTypeTag contractType={jobData.type} />
+                            {jobData.type !== null &&
+                                <ContractTypeTag contractType={jobData.type}/>
+                            }
                         </div>
                         <div className="modalJob">
                             <div className="company">
