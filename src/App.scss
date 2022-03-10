@@ -17,22 +17,6 @@ body {
   padding: 0;
 }
 
-.toggleJobsViewButton {
-  text-align: left;
-  font-size: 1.6rem;
-  font-weight: bolder;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: $type-tag-bg-color;
-
-  &:hover {
-    //text-decoration: underline;
-    color: $activeGreen;
-  }
-}
-
 h4 {
   font-size: 1.5rem;
 }
@@ -127,6 +111,25 @@ h4 {
   font-size: 2rem;
   margin: auto;
   width: 50%;
+  display: flex;
+  justify-content: space-between;
+
+  .toggleJobsViewButton {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $type-tag-bg-color;
+    margin: auto 0 auto;
+
+    &:hover {
+      //text-decoration: underline;
+      color: $activeGreen;
+    }
+  }
 }
 
 .modalClosed {

@@ -3,6 +3,7 @@ import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
 import JobModal from "../JobModal/JobModal";
 import Title from "../Title/Title"
+import ToggleJobsView from "../ToggleJobsView/ToggleJobsView";
 
 const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => {
     const jobArray = (jobData) => {
@@ -49,6 +50,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => 
             <section>
                 <div className="title">
                     <Title titleText="Most Recent Jobs"/>
+                    <ToggleJobsView />
                 </div>
                 <div className="jobResultTable titleRow">
                     <div>
