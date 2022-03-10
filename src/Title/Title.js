@@ -1,7 +1,7 @@
-const Title = ({titleText}) => {
+const Title = ({title}) => {
     return (
         <>
-            <h2>{titleText}</h2>
+            <h2>{title}</h2>
         </>
     )
 }
