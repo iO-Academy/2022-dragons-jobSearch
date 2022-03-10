@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import JobResultTable from "../JobResultTable/JobResultTable";
 
 
-function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobData, title, setTitle}) {
+function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobData, title, setTitle, jobsView, setJobsView}) {
 
 
     const getRecentJobs = async () => {
@@ -29,6 +29,8 @@ function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobDa
                 setJobData={setJobData}
                 title={title}
                 setTitle={setTitle}
+                jobsView={jobsView}
+                setJobsView={setJobsView}
                 getRecentJobs={getRecentJobs}/>
         </>
     )

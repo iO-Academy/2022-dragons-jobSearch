@@ -6,7 +6,7 @@ import Title from "../Title/Title"
 import ToggleJobsView from "../ToggleJobsView/ToggleJobsView";
 import NoResults from "../NoResults/NoResults"
 
-const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, title, setTitle, setJobData, getRecentJobs}) => {
+const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, title, setTitle, setJobData, getRecentJobs, jobsView, setJobsView}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
@@ -56,7 +56,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, titl
             <section>
                 <div className="title">
                     <Title title={title}/>
-                    <ToggleJobsView title={title} setTitle={setTitle} setJobData={setJobData} getRecentJobs={getRecentJobs}/>
+                    <ToggleJobsView title={title} setTitle={setTitle} setJobData={setJobData} getRecentJobs={getRecentJobs} jobsView={jobsView} setJobsView={setJobsView}/>
                 </div>
                 <div className="jobResultTable titleRow">
                     <div>

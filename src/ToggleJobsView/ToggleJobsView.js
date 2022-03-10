@@ -1,8 +1,7 @@
 import {useState} from 'react'
 
-const ToggleJobsView = ({title, setTitle, setJobData, getRecentJobs}) => {
+const ToggleJobsView = ({title, setTitle, setJobData, getRecentJobs, jobsView, setJobsView}) => {
 
-    const [jobsView, setJobsView] = useState(true)
 
     async function getAllJobs() {
         let response = await fetch('http://localhost:8080/jobs')

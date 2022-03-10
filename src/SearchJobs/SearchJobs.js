@@ -12,6 +12,7 @@ const SearchJobs = () => {
     const [jobId, setJobId] = useState('')
     const [title, setTitle] = useState('')
     const [displayResults, setDisplayResults] = useState(true)
+    const [jobsView, setJobsView] = useState(true)
 
     useEffect(() => {
         setTitle('Most Recent Jobs')
@@ -44,6 +45,7 @@ const SearchJobs = () => {
         if (searchQuery !== '') {
             getSearchResults(cleaned)
             setTitle('Search Results')
+            setJobsView(false)
 
         }
     }
@@ -66,6 +68,8 @@ const SearchJobs = () => {
                         jobData={jobData}
                         setJobData={setJobData}
                         title={title}
+                        jobsView={jobsView}
+                        setJobsView={setJobsView}
 
                         setTitle={setTitle}
                         displayResults={displayResults}
