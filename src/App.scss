@@ -2,7 +2,7 @@ $darkGrey: #343A3F;
 $lightGrey: #3E4449;
 $skill-tag-bg-color: #2cbcc9;
 $type-tag-bg-color: #007BFF;
-$skill-tag-bg-color: #2cbcc9;
+$activeGreen: #27A744;
 
 * {
   box-sizing: border-box;
@@ -38,10 +38,26 @@ h4 {
 
   .col1Text {
     display: block;
+
+    button {
+      text-align: left;
+      font-size: 1.6rem;
+      font-weight: bolder;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   div {
     display: flex;
+    align-items: center;
   }
 
   .col4 {
@@ -55,6 +71,7 @@ h4 {
   margin: auto;
   width: 50%;
   min-width: 385px;
+  padding: 0 10px;
 }
 
 
@@ -88,29 +105,183 @@ h4 {
   font-size: 1.3rem;
   height: fit-content;
   width: fit-content;
-
 }
 
 .title {
   font-size: 2rem;
   margin: auto;
   width: 50%;
-  min-width: 385px;
+}
+
+.modalClosed {
+  visibility: hidden;
+}
+
+.modalOpen {
+  visibility: visible;
+}
+
+.modalScreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#0c546070;
+  overflow: scroll;
+}
+
+.JobModal {
+  min-height: 90vh;
+  width: 65vw;
+  margin: auto;
+  background-color: #FFFFFF;
+
+  .modalTitle {
+    background-color:#FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    border-bottom: 1px #dedede solid;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: $type-tag-bg-color;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      background-color: transparent;
+      color: $skill-tag-bg-color;
+      font-weight: bolder;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .modalBanner {
+    background-color: $type-tag-bg-color;
+    height: 15%;
+    margin: 0 10px 10px 10px;
+    padding: 40px 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h3 {
+      color: #FFFFFF;
+      font-size: 2rem;
+      padding-right: 10px;
+      margin: 5px 0;
+    }
+
+    .typeTag {
+      background-color: $activeGreen;
+      margin: 0;
+    }
+  }
+
+  .modalJob {
+    background-color: #FFFFFF;
+    margin: 0 10px 10px 10px;
+    padding: 10px;
+
+    h1 {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    img {
+      height: 70px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .company {
+      display: flex;
+      justify-content: flex-start;
+
+      h4 {
+        margin: auto 0;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+
+    .applyButton {
+      background-color: $activeGreen;
+      color: #ffffff;
+      border-radius: 3px;
+      padding: 5px 10px;
+      border-style: none;
+    }
+
+    .saveForLaterButton {
+      background-color: transparent;
+      color: grey;
+      border-radius: 3px;
+      padding: 5px 10px;
+      border: solid grey;
+    }
+  }
+
+  .keyFacts {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+
+    h5 {
+      margin: 3px 0;
+      padding: 0;
+      font-size: 1.4rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }
 
 @media only screen and (max-width: 900px){
   .jobResultTable {
-    grid-template-columns: 2fr repeat(3, 1fr);
     min-width: 95vw;
+
+    img {
+      display: none;
+    }
   }
 
   .title {
     width: 95%;
   }
 
-  img {
-    display: none;
-  }
+
 
   h2 {
     font-size: 1.5rem;
@@ -128,5 +299,9 @@ h4 {
 
   .col1, .col2, .col3 {
     padding-right: 10px;
+  }
+
+  .JobModal {
+    width: 90%;
   }
 }

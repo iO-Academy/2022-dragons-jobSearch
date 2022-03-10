@@ -1,19 +1,22 @@
 import SkillTag from "../SkillTag/SkillTag";
 import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
+import JobModal from "../JobModal/JobModal";
 
-const JobResultTable = ({jobData}) => {
-
+const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
+        const openModal = () => {
+            setModalShow(true)
+            setJobId(result.id)
+        }
             return (
-
                     <div className="jobResultTable jobRow" key={uniqid()}>
                         <div className="col1">
                             <img alt="companyLogo" src={result.logo} className="companyLogo"/>
                             <div className="col1Text">
-                                <h2>{result.job_title}</h2>
+                                <button onClick={openModal}>{result.job_title}</button>
                                 <h3>{result.company}</h3>
                             </div>
                         </div>
@@ -32,8 +35,6 @@ const JobResultTable = ({jobData}) => {
                             {result.skills.map((skill) => {
                                 return <SkillTag key={uniqid()} skillTag={skill.skill} />
                             })}
-
-
                         </div>
                     </div>
 
@@ -64,7 +65,7 @@ const JobResultTable = ({jobData}) => {
                 </div>
 
                     {jobArray(jobData)}
-
+                <JobModal modalShow={modalShow} setModalShow={setModalShow} jobId={jobId} />
             </section>
         </>
     )
