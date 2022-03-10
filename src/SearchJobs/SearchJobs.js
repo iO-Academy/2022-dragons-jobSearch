@@ -11,6 +11,7 @@ const SearchJobs = () => {
     const [modalShow, setModalShow] = useState(false)
     const [jobId, setJobId] = useState('')
     const [title, setTitle] = useState('')
+    const [displayResults, setDisplayResults] = useState(true)
 
     useEffect(() => {
         setTitle('Most Recent Jobs')
@@ -43,6 +44,7 @@ const SearchJobs = () => {
         if (searchQuery !== '') {
             getSearchResults(cleaned)
             setTitle('Search Results')
+
         }
     }
 
@@ -64,7 +66,12 @@ const SearchJobs = () => {
                         jobData={jobData}
                         setJobData={setJobData}
                         title={title}
-                        setTitle={setTitle}/>
+
+                        setTitle={setTitle}
+                        displayResults={displayResults}
+                        setDisplayResults={setDisplayResults}/>
+/>
+
         </>
     )
 }

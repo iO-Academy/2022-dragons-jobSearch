@@ -8,7 +8,11 @@ function App() {
     return (
             <>
                 <SearchJobs />
-                <NoResults />
+
+
+
+
+
             </>
         )
 }
