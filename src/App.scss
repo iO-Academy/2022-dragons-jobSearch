@@ -302,6 +302,12 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+    font-weight: normal;
   }
 
   input {
@@ -309,7 +315,17 @@ h4 {
     height: 30px;
     border-radius: 8px;
   }
-  
+
+  button {
+    color: #fff;
+    background-color: $type-tag-bg-color;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    border: transparent;
+    border-radius: 5px;
+  }
 }
 
 @media only screen and (max-width: 900px){

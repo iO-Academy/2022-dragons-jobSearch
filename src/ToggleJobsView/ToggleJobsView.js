@@ -11,6 +11,7 @@ const ToggleJobsView = ({title, setTitle, setJobData, getRecentJobs}) => {
     }
 
     const handleClick = () => {
+        //Change jobsView value to opposite of current value (only works with boolean)
         setJobsView(!jobsView)
         if (jobsView){
             setTitle('All Jobs')
