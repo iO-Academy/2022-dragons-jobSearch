@@ -5,7 +5,7 @@ import JobModal from "../JobModal/JobModal";
 import Title from "../Title/Title"
 import ToggleJobsView from "../ToggleJobsView/ToggleJobsView";
 
-const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => {
+const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, title, setTitle}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
@@ -49,8 +49,8 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => 
         <>
             <section>
                 <div className="title">
-                    <Title titleText="Most Recent Jobs"/>
-                    <ToggleJobsView />
+                    <Title title={title}/>
+                    <ToggleJobsView title={title} setTitle={setTitle}/>
                 </div>
                 <div className="jobResultTable titleRow">
                     <div>

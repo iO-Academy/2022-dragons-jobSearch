@@ -1,11 +1,20 @@
 import {useEffect, useState} from "react";
 import RecentJobs from "../RecentJobs/recentJobs";
 
+
+
 const SearchJobs = () => {
+
+    const [jobData, setJobData] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [modalShow, setModalShow] = useState(false)
     const [jobId, setJobId] = useState('')
+    const [title, setTitle] = useState('')
+
+    useEffect(() => {
+        setTitle('Most Recent Jobs')
+    }, [])
 
     function sanitiseInput(str) {
         let noSpecialCharacters = str.replace(/[^a-zA-Z0-9 ]/g, '')
@@ -14,6 +23,7 @@ const SearchJobs = () => {
 
     useEffect(() => {
         console.log(searchResults)
+        setJobData(searchResults)
     }, [searchResults])
 
     async function getSearchResults(searchQ) {
@@ -29,10 +39,12 @@ const SearchJobs = () => {
 
     const searchJobs = (e) => {
         e.preventDefault()
+        setTitle('Search Results')
         let cleaned = sanitiseInput(searchQuery)
         searchQuery !== '' &&
             getSearchResults(cleaned)
     }
+
 
     return (
         <>
@@ -44,7 +56,7 @@ const SearchJobs = () => {
                 </form>
             </div>
 
-            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} modalShow={modalShow} jobId={jobId} />
+            <RecentJobs setModalShow={setModalShow} setJobId={setJobId} modalShow={modalShow} jobId={jobId} jobData={jobData} setJobData={setJobData} title={title} setTitle={setTitle}/>
         </>
     )
 }

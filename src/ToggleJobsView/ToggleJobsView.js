@@ -1,11 +1,12 @@
 import {useState} from 'react'
 
-const ToggleJobsView = () => {
+const ToggleJobsView = ({title, setTitle}) => {
 
     const [jobsView, setJobsView] = useState(true)
 
     const handleClick = () => {
         setJobsView(!jobsView)
+        setTitle('All Jobs')
     }
 
     return (
