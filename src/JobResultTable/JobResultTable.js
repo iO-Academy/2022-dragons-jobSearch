@@ -16,7 +16,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => 
                         <div className="col1">
                             <img alt="companyLogo" src={result.logo} className="companyLogo"/>
                             <div className="col1Text">
-                                <a href="#" onClick={openModal}><h2>{result.job_title}</h2></a>
+                                <button onClick={openModal}>{result.job_title}</button>
                                 <h3>{result.company}</h3>
                             </div>
                         </div>

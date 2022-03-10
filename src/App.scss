@@ -2,7 +2,6 @@ $darkGrey: #343A3F;
 $lightGrey: #3E4449;
 $skill-tag-bg-color: #2cbcc9;
 $type-tag-bg-color: #007BFF;
-$skill-tag-bg-color: #2cbcc9;
 $activeGreen: #27A744;
 
 * {
@@ -40,8 +39,14 @@ h4 {
   .col1Text {
     display: block;
 
-    a {
-      text-decoration: none;
+    button {
+      text-align: left;
+      font-size: 1.6rem;
+      font-weight: bolder;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
       color: #fff;
 
       &:hover {
@@ -100,7 +105,6 @@ h4 {
   font-size: 1.3rem;
   height: fit-content;
   width: fit-content;
-
 }
 
 .title {
@@ -154,26 +158,36 @@ h4 {
     a {
       text-decoration: none;
     }
+
+    button {
+      background-color: transparent;
+      color: $skill-tag-bg-color;
+      font-weight: bolder;
+      border: none;
+      cursor: pointer;
+    }
   }
 
   .modalBanner {
     background-color: $type-tag-bg-color;
     height: 15%;
     margin: 0 10px 10px 10px;
-    padding: 0 40px;
+    padding: 40px 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
 
     h3 {
       color: #FFFFFF;
       font-size: 2rem;
       padding-right: 10px;
-
+      margin: 5px 0;
     }
 
     .typeTag {
       background-color: $activeGreen;
+      margin: 0;
     }
   }
 
@@ -257,15 +271,17 @@ h4 {
 @media only screen and (max-width: 900px){
   .jobResultTable {
     min-width: 95vw;
+
+    img {
+      display: none;
+    }
   }
 
   .title {
     width: 95%;
   }
 
-  img {
-    display: none;
-  }
+
 
   h2 {
     font-size: 1.5rem;

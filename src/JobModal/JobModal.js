@@ -39,7 +39,7 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                     <section onClick={modalClick} className="JobModal">
                         <div className="modalTitle">
                             <h3>{jobData.job_title} - {jobData.company}</h3>
-                            <a href="#"><p onClick={closeModal}>{"\u2715"}</p></a>
+                            <button onClick={closeModal}>{"\u2715"}</button>
                         </div>
                         <div className="modalBanner">
                             <h3>{jobData.job_title}</h3>
@@ -60,7 +60,7 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                                 <h5>Skills:</h5>
                                 {jobData.salary !== null ?
                                     <h5>£{parseInt(jobData.salary).toLocaleString("en-US")}</h5>
-                                    : <h5></h5>
+                                    : <h5> </h5>
                                 }
                                 <h5>{jobData.type}</h5>
                                 <h5>{(formatDate(jobData.posted))}</h5>
