@@ -27,8 +27,8 @@ const SearchJobs = () => {
         setJobData(searchResults)
     }, [searchResults])
 
-    async function getSearchResults(searchQ) {
-        let response = await fetch('http://localhost:8080/jobs?search=' + searchQ)
+    async function getSearchResults(searchQuery) {
+        let response = await fetch('http://localhost:8080/jobs?search=' + searchQuery)
         const jobData = await response.json()
         setSearchResults(jobData)
     }
@@ -54,7 +54,7 @@ const SearchJobs = () => {
             <div className="searchBanner">
                 <form>
                     <h1>Find your perfect job</h1>
-                    <input type="text" onChange={handleChange}/>
+                    <input type="text" placeholder="job title / keyword / company" onChange={handleChange} />
                     <button onClick={searchJobs}>Search</button>
                 </form>
             </div>
@@ -66,9 +66,12 @@ const SearchJobs = () => {
                         jobData={jobData}
                         setJobData={setJobData}
                         title={title}
+
                         setTitle={setTitle}
                         displayResults={displayResults}
                         setDisplayResults={setDisplayResults}/>
+/>
+
         </>
     )
 }
