@@ -72,7 +72,6 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
                                 <p>{jobData.job_description}</p>
                                 <div className="buttons">
                                     <button className="applyButton">Apply Now</button>
-                                    <button className="saveForLaterButton">Save for later</button>
                                 </div>
                             </main>
                         </div>
