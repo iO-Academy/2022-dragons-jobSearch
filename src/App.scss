@@ -395,4 +395,19 @@ h4 {
   .JobModal {
     width: 90%;
   }
+
+  .searchBanner {
+
+    form {
+      width: 90%;
+    }
+  }
+
+  .noResultsContainer {
+    width: 95%;
+
+    .noResultsText {
+      padding: 20px;
+    }
+  }
 }

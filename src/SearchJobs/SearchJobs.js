@@ -70,8 +70,6 @@ const SearchJobs = () => {
                         setTitle={setTitle}
                         displayResults={displayResults}
                         setDisplayResults={setDisplayResults}/>
-/>
-
         </>
     )
 }
