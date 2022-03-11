@@ -60,7 +60,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, titl
                 </div>
                 <div className="jobResultTable titleRow">
                     <div>
-                        Job Title/Company
+                        Job Title / Company
                     </div>
                     <div>
                         Type

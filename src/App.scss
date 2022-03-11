@@ -18,22 +18,24 @@ body {
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .jobResultTable {
   margin: auto;
+  padding: 10px;
   width: 50%;
   min-width: 385px;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 2fr;
-  color: white;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 10px;
+  color: #fff;
   background-color: $darkGrey;
 
   .companyLogo {
     height: 75px;
     width: auto;
-    margin: 10px 10px;
+    margin-right: 10px;
   }
 
   .col1Text {
@@ -67,7 +69,9 @@ h4 {
 
 .titleRow {
   height: 40px;
-  font-size: 2rem;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  background-color: $lightGrey;
+  font-size: 1.6rem;
   margin: auto;
   width: 50%;
   min-width: 385px;
@@ -92,7 +96,7 @@ h4 {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: bolder;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -102,7 +106,7 @@ h4 {
   border-radius: 5px;
   padding: 3px;
   font-weight: bolder;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   height: fit-content;
   width: fit-content;
 }
@@ -322,9 +326,10 @@ h4 {
   display: flex;
   width: 100%;
   height: 300px;
-  background-image: url('search-bg.jpg');
+  background: url('search-bg2.jpg') rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
   background-size: cover;
-  background-position: center;
+  background-position: 50% 60%;
   justify-content: center;
   color: #fff;
 
@@ -337,7 +342,7 @@ h4 {
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
     font-weight: normal;
   }
 
@@ -345,6 +350,7 @@ h4 {
     width: 100%;
     height: 30px;
     border-radius: 8px;
+    padding: 18px;
   }
 
   button {
@@ -352,8 +358,8 @@ h4 {
     background-color: $type-tag-bg-color;
     margin: 15px 0;
     padding: 15px;
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 1.6rem;
+    font-weight: 600;
     border: transparent;
     border-radius: 5px;
   }
@@ -362,9 +368,20 @@ h4 {
 @media only screen and (max-width: 900px){
   .jobResultTable {
     min-width: 95vw;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr);
 
     img {
       display: none;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+
+    .col1Text {
+      button {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -380,17 +397,17 @@ h4 {
 
   .titleRow {
     font-size: 1.3rem;
-    padding: 5px 5px;
+    //padding: 5px 5px;
     height: 30px;
   }
 
-  .col1Text {
-    padding-left: 10px;
-  }
-
-  .col1, .col2, .col3 {
-    padding-right: 10px;
-  }
+  //.col1Text {
+  //  padding-left: 10px;
+  //}
+  //
+  //.col1, .col2, .col3 {
+  //  padding-right: 10px;
+  //}
 
   .JobModal {
     width: 90%;
@@ -408,6 +425,16 @@ h4 {
 
     .noResultsText {
       padding: 20px;
+    }
+  }
+
+  .typeTag {
+    font-size: 1rem;
+  }
+
+  .skillTag {
+    p {
+    font-size: 1rem;
     }
   }
 }

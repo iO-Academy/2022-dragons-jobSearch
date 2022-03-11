@@ -6,7 +6,7 @@ const ToggleJobsView = ({title, setTitle, setJobData, getRecentJobs, jobsView, s
     async function getAllJobs() {
         let response = await fetch('http://localhost:8080/jobs')
         const jobData = await response.json()
-        setJobData(jobData)
+        setJobData(jobData.reverse())
     }
 
     const handleClick = () => {
