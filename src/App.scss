@@ -1,8 +1,20 @@
-$darkGrey: #343A3F;
-$lightGrey: #3E4449;
+$darkGrey: #343a3f;
+$lightGrey: #3e4449;
 $skill-tag-bg-color: #2cbcc9;
-$type-tag-bg-color: #007BFF;
-$activeGreen: #27A744;
+$type-tag-bg-color: #007bff;
+$activeGreen: #27a744;
+
+@mixin textButton($color) {
+  height: fit-content;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: $color;
+}
 
 * {
   box-sizing: border-box;
@@ -15,6 +27,10 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+section {
+  padding: 15px 0;
 }
 
 h4 {
@@ -42,14 +58,7 @@ h4 {
     display: block;
 
     button {
-      text-align: left;
-      font-size: 1.6rem;
-      font-weight: bolder;
-      padding: 0;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      color: #fff;
+      @include textButton(#fff);
 
       &:hover {
         text-decoration: underline;
@@ -69,7 +78,7 @@ h4 {
 
 .titleRow {
   height: 40px;
-  border-bottom: 2px solid rgba(255,255,255,0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   background-color: $lightGrey;
   font-size: 1.6rem;
   margin: auto;
@@ -77,7 +86,6 @@ h4 {
   min-width: 385px;
   padding: 0 10px;
 }
-
 
 .jobRow:nth-child(2n) {
   background-color: $lightGrey;
@@ -117,20 +125,12 @@ h4 {
   width: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 
   .toggleJobsViewButton {
-    text-align: left;
-    font-size: 1.6rem;
-    font-weight: bolder;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: $type-tag-bg-color;
-    margin: auto 0 auto;
+    @include textButton($type-tag-bg-color);
 
     &:hover {
-      //text-decoration: underline;
       color: $activeGreen;
     }
   }
@@ -141,30 +141,23 @@ h4 {
   width: 50%;
   height: 400px;
   background-color: $lightGrey;
-  color: #FFFFFF;
+  color: #ffffff;
 
   .noResultsText {
     padding: 120px;
-
   }
-
 
   h1, p {
     text-align: center;
-
   }
-
 
   h1 {
     font-size: 2.5rem;
   }
 
-
   p {
     font-size: 2rem;
   }
-
-
 }
 
 .modalClosed {
@@ -185,18 +178,19 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#0c546070;
+  background-color: #0c546070;
   overflow: scroll;
+  padding: 20px 0;
 }
 
 .JobModal {
   min-height: 90vh;
   width: 65vw;
   margin: auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   .modalTitle {
-    background-color:#FFFFFF;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     padding: 5px 10px 5px 10px;
@@ -233,7 +227,7 @@ h4 {
     flex-wrap: wrap;
 
     h3 {
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 2rem;
       padding-right: 10px;
       margin: 5px 0;
@@ -246,7 +240,7 @@ h4 {
   }
 
   .modalJob {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     margin: 0 10px 10px 10px;
     padding: 10px;
 
@@ -326,7 +320,7 @@ h4 {
   display: flex;
   width: 100%;
   height: 300px;
-  background: url('search-bg2.jpg') rgba(0, 0, 0, 0.3);
+  background: url("search-bg2.jpg") rgba(0, 0, 0, 0.3);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: 50% 60%;
@@ -365,7 +359,7 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
   .jobResultTable {
     min-width: 95vw;
     grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr);
@@ -387,34 +381,36 @@ h4 {
 
   .title {
     width: 95%;
-  }
 
+    h2 {
+      font-size: 1.8rem;
+    }
 
-
-  h2 {
-    font-size: 1.5rem;
+    .toggleJobsViewButton {
+      font-size: 1.4rem;
+    }
   }
 
   .titleRow {
     font-size: 1.3rem;
-    //padding: 5px 5px;
     height: 30px;
   }
 
-  //.col1Text {
-  //  padding-left: 10px;
-  //}
-  //
-  //.col1, .col2, .col3 {
-  //  padding-right: 10px;
-  //}
-
   .JobModal {
     width: 90%;
+
+    .keyFacts {
+      h5 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 
   .searchBanner {
-
     form {
       width: 90%;
     }
@@ -434,7 +430,7 @@ h4 {
 
   .skillTag {
     p {
-    font-size: 1rem;
+      font-size: 1rem;
     }
   }
 }
