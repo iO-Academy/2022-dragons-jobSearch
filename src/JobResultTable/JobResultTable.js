@@ -53,7 +53,7 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, titl
 
     return (
         <>
-            <section>
+            <section className="jobListings">
                 <div className="title">
                     <Title title={title}/>
                     <ToggleJobsView title={title} setTitle={setTitle} setJobData={setJobData} getRecentJobs={getRecentJobs} jobsView={jobsView} setJobsView={setJobsView}/>
