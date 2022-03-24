@@ -1,7 +1,7 @@
-const Title = ({recentJobs}) => {
+const Title = ({title}) => {
     return (
         <>
-            <h2 className="title">{recentJobs}</h2>
+            <h2>{title}</h2>
         </>
     )
 }

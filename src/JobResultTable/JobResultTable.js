@@ -2,8 +2,11 @@ import SkillTag from "../SkillTag/SkillTag";
 import ContractTypeTag from "../ContractType/contractType";
 import uniqid from 'uniqid';
 import JobModal from "../JobModal/JobModal";
+import Title from "../Title/Title"
+import ToggleJobsView from "../ToggleJobsView/ToggleJobsView";
+import NoResults from "../NoResults/NoResults"
 
-const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => {
+const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId, title, setTitle, setJobData, getRecentJobs, jobsView, setJobsView}) => {
     const jobArray = (jobData) => {
         let tableResults = jobData.map((result) => {
         let contractType = result.type
@@ -40,14 +43,20 @@ const JobResultTable = ({jobData, setModalShow, setJobId, modalShow, jobId}) => 
 
             )
         })
-        return tableResults
+
+        if (jobData.length === 0) {
+            return (<NoResults/>)
+        } else {
+            return tableResults
+        }
     }
 
     return (
         <>
             <section>
                 <div className="title">
-                    <h2>Most Recent Jobs</h2>
+                    <Title title={title}/>
+                    <ToggleJobsView title={title} setTitle={setTitle} setJobData={setJobData} getRecentJobs={getRecentJobs} jobsView={jobsView} setJobsView={setJobsView}/>
                 </div>
                 <div className="jobResultTable titleRow">
                     <div>

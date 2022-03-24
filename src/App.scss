@@ -111,6 +111,56 @@ h4 {
   font-size: 2rem;
   margin: auto;
   width: 50%;
+  display: flex;
+  justify-content: space-between;
+
+  .toggleJobsViewButton {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $type-tag-bg-color;
+    margin: auto 0 auto;
+
+    &:hover {
+      //text-decoration: underline;
+      color: $activeGreen;
+    }
+  }
+}
+
+.noResultsContainer {
+  margin: 0 auto;
+  width: 50%;
+  height: 400px;
+  background-color: $lightGrey;
+  color: #FFFFFF;
+
+  .noResultsText {
+    padding: 120px;
+
+  }
+
+
+  h1, p {
+    text-align: center;
+
+  }
+
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+
+  p {
+    font-size: 2rem;
+  }
+
+
 }
 
 .modalClosed {
@@ -268,6 +318,47 @@ h4 {
   }
 }
 
+.searchBanner {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-image: url('search-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  color: #fff;
+
+  form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+    font-weight: normal;
+  }
+
+  input {
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+  }
+
+  button {
+    color: #fff;
+    background-color: $type-tag-bg-color;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    border: transparent;
+    border-radius: 5px;
+  }
+}
+
 @media only screen and (max-width: 900px){
   .jobResultTable {
     min-width: 95vw;
@@ -303,5 +394,20 @@ h4 {
 
   .JobModal {
     width: 90%;
+  }
+
+  .searchBanner {
+
+    form {
+      width: 90%;
+    }
+  }
+
+  .noResultsContainer {
+    width: 95%;
+
+    .noResultsText {
+      padding: 20px;
+    }
   }
 }

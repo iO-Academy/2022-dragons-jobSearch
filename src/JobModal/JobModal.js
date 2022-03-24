@@ -16,7 +16,7 @@ const JobModal = ({jobId, modalShow, setModalShow}) => {
 
     useEffect(() => {
         const getSingleJob = async () => {
-            let response = await fetch(`http://localhost:8080/jobs/${jobId}`)
+            let response = await fetch(process.env.REACT_APP_API_URL + `/jobs/${jobId}`)
             const jobData = await response.json()
             setJobData(jobData)
         }
