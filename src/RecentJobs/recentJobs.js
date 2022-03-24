@@ -1,12 +1,10 @@
 import {useState, useEffect} from "react"
 import JobResultTable from "../JobResultTable/JobResultTable";
 
-
 function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobData, title, setTitle, jobsView, setJobsView}) {
 
-
     const getRecentJobs = async () => {
-        let response = await fetch('http://localhost:8080/jobs/recent')
+        let response = await fetch(process.env.REACT_APP_API_URL + '/jobs/recent')
         const jobDataJson = await response.json()
         setJobData(jobDataJson)
     }

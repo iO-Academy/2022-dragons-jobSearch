@@ -24,12 +24,11 @@ const SearchJobs = () => {
     }
 
     useEffect(() => {
-        console.log(searchResults)
         setJobData(searchResults)
     }, [searchResults])
 
     async function getSearchResults(searchQuery) {
-        let response = await fetch('http://localhost:8080/jobs?search=' + searchQuery)
+        let response = await fetch(process.env.REACT_APP_API_URL + '/jobs?search=' + searchQuery)
         const jobData = await response.json()
         setSearchResults(jobData)
     }

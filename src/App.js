@@ -8,11 +8,6 @@ function App() {
     return (
             <>
                 <SearchJobs />
-
-
-
-
-
             </>
         )
 }
