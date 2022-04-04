@@ -6,7 +6,7 @@ function RecentJobs({setModalShow, setJobId, modalShow, jobId, jobData, setJobDa
     const getRecentJobs = async () => {
         let response = await fetch(process.env.REACT_APP_API_URL + '/jobs/recent')
         const jobDataJson = await response.json()
-        setJobData(jobDataJson)
+        setJobData(jobDataJson.reverse())
     }
 
     useEffect(() => {
